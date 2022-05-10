@@ -1,38 +1,100 @@
+body {
+  margin: 0;
+  font-family: "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .App {
   text-align: center;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  flex: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  border: 1px lavender solid;
+  box-shadow: 3px 17px 10px -8px rgba(0, 0, 0, 0.26);
+  -webkit-box-shadow: 3px 17px 10px -8px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 3px 17px 10px -8px rgba(0, 0, 0, 0.26);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header > * {
+  margin: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header .inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.header .inputContainer > * {
+  margin: 0.15rem;
+}
+
+.header input {
+  min-width: 200px;
+  min-height: 40px;
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+}
+
+.todoList {
+  flex: 70% 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.task {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-width: 2rem;
+  min-height: 1rem;
+  color: black;
+  margin: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.task .content {
+  flex: 80% 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task .content div {
+  display: grid;
+  place-items: center;
+  border: 1px solid white;
+  height: 100%;
+  font-size: 18px;
+  border-right: none;
+  margin-left: 10px;
+}
+
+.taskName {
+  min-width: 15rem;
+}
+
+.content div:last-child {
+  margin-right: 2rem;
+}
+
+.deleteButton{
+  align-self: flex-end;
+  margin-right: 10%;
 }
